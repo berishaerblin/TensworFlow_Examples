@@ -51,3 +51,13 @@ for i in range(25):
     plt.xlabel(class_names[train_labels[i]])
 plt.show()
 
+model = keras.Sequential([keras.layers.Flatten(input_shape=(28, 28)),
+                          keras.layers.Dense(128, activation = 'relu'),
+                          keras.layers.Dense(10, activation = 'softmax')])
+
+model.compile(optimezer = 'adam',
+              los = 'sparse_categorical_crossentropy'
+              metrics = ['accuracy'])
+
+
+
